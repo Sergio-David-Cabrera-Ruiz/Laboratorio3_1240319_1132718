@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Labo3.Models.Medicina>
+
+@{
+    ViewBag.Title = "Carrito";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center><h2>MEDICINAS</h2></center>
+<h4>ESCRIBA LA MEDICINA A BUSCAR </h4>
+<form action="/Home/listadodecompra/" method="post">
+    <input type="submit" value="medicinas adquirdas" />
+</form>
+<br />
+<form action="/Home/Carrito/" method="post">
+    <input type="submit" value="Reabastecer medicinas" />
+</form>
+<br />
+
+@using (Html.BeginForm())
+{
+    <b>Nombre</b>
+    <input type="text" name="Nombre" value="@ViewBag.Nombre" />
+    <input type="submit" value="Filtrar" />
+
+
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Nombre</td>
+            <td>Descripcion</td>
+            <td>CasaProductora</td>
+            <td>Precio</td>
+            <td>Existencia</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+                <td>@item.Descripcion</td>
+                <td>@item.CasaProductora</td>
+                <td>@item.Precio</td>
+                <td>@item.Existencia </td>
+                <td>
+
+                    <input type="button" value="Agregar" class="btn btn-dange" onclick="location.href='http://localhost:51459/Home/Carrito/'" />
+
+                </td>
+            </tr>
+        }
+    </table>
+}
+
