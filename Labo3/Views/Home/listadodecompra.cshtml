@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Labo3.Models.Medicina>
+
+@{
+    ViewBag.Title = "listadodecompra";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>listadodecompra</h2>
+
+@using (Html.BeginForm())
+{
+
+
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Nombre</td>
+            <td>Descripcion</td>
+            <td>CasaProductora</td>
+            <td>Precio</td>
+            <td>Existencia</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+                <td>@item.Descripcion</td>
+                <td>@item.CasaProductora</td>
+                <td>@item.Precio</td>
+                <td>@item.Existencia </td>
+                <td>
+                    <input type="button" value="Eliminar" class="btn btn-dange" />
+                </td>
+            </tr>
+        }
+    </table>
+}
+<form action="/Home/Index/" method="post">
+    <input type="submit" value="Exportar archivo csv" />
+</form>
+<br />

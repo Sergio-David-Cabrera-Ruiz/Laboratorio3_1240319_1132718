@@ -124,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Arbol.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Medicina.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,9 +167,13 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\agregarmedicina.cshtml" />
     <Content Include="Views\Home\Carrito.cshtml" />
+    <Content Include="Views\Home\ingresocliente.cshtml" />
+    <Content Include="Views\Home\listadodecompra.cshtml" />
+    <Content Include="Views\Home\ListaMedica.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Archivo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

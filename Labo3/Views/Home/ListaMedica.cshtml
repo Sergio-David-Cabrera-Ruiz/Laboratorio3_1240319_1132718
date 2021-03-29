@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Labo3.Models.Medicina>
+
+@{
+    ViewBag.Title = "ListaMedica";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListaMedica</h2>
+<body align="center">
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content")" rel="stylesheet" type="text/css" />
+    <form action="/Home/ingresocliente/" method="post">
+        <input type="submit" value="INGRESAR DATOS DEL CLIENTE" />
+    </form><br />
+
+    <form action="/Home/Carrito/" method="post">
+        <input type="submit" value="CARRITO DE MEDICINAS" />
+    </form><br />
+
+    <center>
+        <hr />
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CasaProductora)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Existencia)
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CasaProductora)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Existencia)
+                    </td>
+                </tr>
+            }
+        </table>
+    </center>
+</body>
